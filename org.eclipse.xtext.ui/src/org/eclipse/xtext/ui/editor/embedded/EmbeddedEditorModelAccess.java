@@ -128,7 +128,7 @@ public class EmbeddedEditorModelAccess {
 		this.viewer.getUndoManager().disconnect();
 		document.set(model);
 		
-		ITextRegion textRegion = document.readOnly(editablePartSelector);
+		ITextRegion textRegion = document.tryReadOnly(editablePartSelector);
 		if (textRegion == null) {
 			this.viewer.resetVisibleRegion();
 		} else {

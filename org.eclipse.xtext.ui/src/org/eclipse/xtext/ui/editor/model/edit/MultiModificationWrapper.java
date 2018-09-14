@@ -44,7 +44,9 @@ public class MultiModificationWrapper implements IModification, IBatchableModifi
 	@Override
 	public void apply(IModificationContext ctx) throws Exception {
 		IXtextDocument document = ctx.getXtextDocument();
-		BatchModification batch = document.readOnly(r -> r.getResourceServiceProvider().get(BatchModification.class));
+		BatchModification batch = document.tryReadOnly(r -> r.getResourceServiceProvider().get(BatchModification.class));
+		if (batch == null) return;
+
 		batch.setDocument(document);
 		batch.apply(Collections.singleton(this), new NullProgressMonitor());
 	}

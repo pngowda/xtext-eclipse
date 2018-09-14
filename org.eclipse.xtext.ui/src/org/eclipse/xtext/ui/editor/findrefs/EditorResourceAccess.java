@@ -39,7 +39,7 @@ public class EditorResourceAccess implements IReferenceFinder.ILocalResourceAcce
 						return work.exec(localContext);
 					return null;
 				}
-			}, () -> { return null; });
+			});
 		} else {
 			return delegate.readOnly(targetURI, work);
 		}

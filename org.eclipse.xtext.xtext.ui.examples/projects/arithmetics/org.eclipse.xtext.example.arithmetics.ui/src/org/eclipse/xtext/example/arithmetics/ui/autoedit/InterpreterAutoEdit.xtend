@@ -43,12 +43,12 @@ class InterpreterAutoEdit implements IAutoEditStrategy {
 	}
 
 	def private BigDecimal computeResult(IDocument document, DocumentCommand command) {
-		return ((document as IXtextDocument)).readOnly([ resource |
+		return (document as IXtextDocument).tryReadOnly [ resource |
 			var stmt = findEvaluation(command, resource)
 			if(stmt === null) 
 				return null
 			return evaluate(stmt)
-		])
+		]
 	}
 
 	def protected BigDecimal evaluate(Evaluation stmt) {
