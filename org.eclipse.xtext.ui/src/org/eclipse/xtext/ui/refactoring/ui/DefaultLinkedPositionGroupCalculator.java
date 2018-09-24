@@ -54,6 +54,7 @@ import org.eclipse.xtext.ui.refactoring.impl.IRefactoringDocument;
 import org.eclipse.xtext.ui.refactoring.impl.ProjectUtil;
 import org.eclipse.xtext.ui.refactoring.impl.RefactoringResourceSetProvider;
 import org.eclipse.xtext.ui.refactoring.impl.StatusWrapper;
+import org.eclipse.xtext.util.internal.Nullable;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicates;
@@ -275,7 +276,7 @@ public class DefaultLinkedPositionGroupCalculator implements ILinkedPositionGrou
 		}
 
 		@Override
-		public IRefactoringDocument getDocument(URI resourceURI) {
+		public @Nullable IRefactoringDocument getDocument(URI resourceURI) {
 			return refactoringDocumentProvider.get(resourceURI, status);
 		}
 

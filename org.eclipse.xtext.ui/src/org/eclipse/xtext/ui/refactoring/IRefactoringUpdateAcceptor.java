@@ -14,6 +14,7 @@ import org.eclipse.text.edits.TextEdit;
 import org.eclipse.xtext.ui.refactoring.impl.IRefactoringDocument;
 import org.eclipse.xtext.ui.refactoring.impl.RefactoringUpdateAcceptor;
 import org.eclipse.xtext.ui.refactoring.impl.StatusWrapper;
+import org.eclipse.xtext.util.internal.Nullable;
 
 import com.google.inject.ImplementedBy;
 
@@ -32,7 +33,7 @@ public interface IRefactoringUpdateAcceptor {
 
 	StatusWrapper getRefactoringStatus();
 	
-	IRefactoringDocument getDocument(URI resourceURI);
+	@Nullable IRefactoringDocument getDocument(URI resourceURI);
 	
 	/**
 	 * Returns a composite change of all accepted updates.

@@ -47,6 +47,7 @@ import org.eclipse.xtext.util.ITextRegion;
 import org.eclipse.xtext.util.Pair;
 import org.eclipse.xtext.util.ReplaceRegion;
 import org.eclipse.xtext.util.Tuples;
+import org.eclipse.xtext.util.internal.Nullable;
 import org.eclipse.xtext.xbase.XAbstractFeatureCall;
 import org.eclipse.xtext.xbase.XFeatureCall;
 import org.eclipse.xtext.xbase.XMemberFeatureCall;
