@@ -46,7 +46,7 @@ node {
 	}
 	
 	stage('Maven Build') {
-		def test = "qew"
+		def test1 = "qew"
 		def mvnHome = tool 'M3'
 		def test=123
 		def targetProfile = "-Poxygen"
