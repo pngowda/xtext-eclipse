@@ -48,6 +48,7 @@ node {
 	stage('Maven Build') {
 		def mvnHome = tool 'M3'
 		def targetProfile = "-Poxygen"
+		def test="test"
 		if ("latest" == params.target_platform) {
 			targetProfile = "-Platest"
 		} else if ("r201809" == params.target_platform) {
